@@ -10,7 +10,7 @@ class Goal {
 
     draw() {
         canvas.fillStyle = this.color;
-        canvas.begiPath();
+        canvas.beginPath();
         canvas.arc(this.x, this.y, this.r, 0, 2*Math.PI);
         canvas.fill();
     }

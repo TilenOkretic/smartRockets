@@ -18,4 +18,10 @@ class Population {
             this.rockets[i].draw();
         }
     }
+
+    update() {
+        for (let i = 0; i < this.rockets.length; i++) {
+            this.rockets[i].update();
+        }
+    }
 }

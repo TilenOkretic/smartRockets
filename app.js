@@ -10,9 +10,9 @@ let population;
 let goal;
 let barricade;
 
-let main = () => {
+let main = async () => {
     init();
-    simulate();
+    await simulate();
 };
 
 let init = () => {
@@ -20,6 +20,7 @@ let init = () => {
     population = initPopulation();
     goal = initGoal();
     barricade = initBarricade();
+    console.log(barricade, population);
 };
 
 let simulate = async () => {
@@ -30,6 +31,7 @@ let simulate = async () => {
 
 let simulateGeneration = async () => {
     for (let tick = 0; tick < GENERATION_LENGTH; tick++) {
+        update();
         draw();
         await sleep(64);
         
@@ -54,7 +56,11 @@ let initPopulation = () => {
 };
 
 let initBarricade = () => {
-    return new Barricade(0, FRAME_HEIGHT, FRAME_WIDTH * 2/3, FRAME_HEIGHT / 20);
+    return new Barricade(0, FRAME_HEIGHT / 2, FRAME_WIDTH * 2/3, FRAME_HEIGHT / 20);
+};
+
+let update = () => {
+    population.update();
 };
 
 let draw = () => {
@@ -70,15 +76,15 @@ let clearCanvas = () => {
 };
 
 let drawGoal = () => {
-
+    goal.draw();
 };
 
 let drawBarricade = () => {
-
+    barricade.draw();
 };
 
 let drawPopulation = () => {
-
+    population.draw();
 };
 
 let sleep = (ms) => {

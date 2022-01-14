@@ -6,7 +6,7 @@ class Barricade {
         this.y = y;
         this.w = w;
         this.h = h;
-        this.color = "rgb(90, 70, 148)";
+        this.color = 'rgb(90, 70, 148)';
     }
 
     draw() {
