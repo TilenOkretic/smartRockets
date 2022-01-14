@@ -1,1 +1,3 @@
 # smartRockets
+
+Genetski algoritmi
